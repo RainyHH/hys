@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+   <meta charset="utf-8
+   <title>您今天听音乐了吗？</title>
+   <meta name="description" content="all about our fake experiment">
+   <meta name="authour" content="Hao Yusi for htmls. Wang Yiming for inquisit. Wang Wanrui for quartrics.">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="css/bootstrap.css" rel="stylesheet">
+   <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+
+   <style>
+    body {
+      padding-bottom: 40px;
+      color: #5a5a5a;
+    }
+
+
+
+
+    .navbar-wrapper {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
+      margin-top: 20px;
+      margin-bottom: -90px; /* Negative margin to pull up carousel. 90px is roughly margins and height of navbar. */
+    }
+    .navbar-wrapper .navbar {
+
+    }
+
+
+    .navbar .navbar-inner {
+      border: 0;
+      -webkit-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+         -moz-box-shadow: 0 2px 10px rgba(0,0,0,.25);
+              box-shadow: 0 2px 10px rgba(0,0,0,.25);
+    }
+
+ 
+    .navbar .brand {
+      padding: 14px 20px 16px; /* Increase vertical padding to match navbar links */
+      font-size: 16px;
+      font-weight: bold;
+      text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+    }
+
+
+    .navbar .nav > li > a {
+      padding: 15px 20px;
+    }
+
+ 
+    .navbar .btn-navbar {
+      margin-top: 10px;
+    }
+
+
+
+ 
+    .carousel {
+      margin-bottom: 60px;
+    }
+
+    .carousel .container {
+      position: relative;
+      z-index: 9;
+    }
+
+    .carousel-control {
+      height: 80px;
+      margin-top: 0;
+      font-size: 120px;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+      background-color: transparent;
+      border: 0;
+      z-index: 10;
+    }
+
+    .carousel .item {
+      height: 500px;
+    }
+    .carousel img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      min-width: 100%;
+      height: 500px;
+    }
+
+    .carousel-caption {
+      background-color: transparent;
+      position: static;
+      max-width: 550px;
+      padding: 0 20px;
+      margin-top: 200px;
+    }
+    .carousel-caption h1,
+    .carousel-caption .lead {
+      margin: 0;
+      line-height: 1.25;
+      color: #fff;
+      text-shadow: 0 1px 1px rgba(0,0,0,.4);
+    }
+    .carousel-caption .btn {
+      margin-top: 10px;
+    }
+	
+	   .marketing .span3 {
+      text-align: center;
+    }
+    .marketing h3 {
+      font-weight: normal;
+    }
+    .marketing .span3 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+
+ .featurette-divider {
+      margin: 80px 0; 
+    }
+    .featurette {
+      padding-top: 120px; 
+      overflow: hidden; 
+    }
+    .featurette-image {
+      margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+    }
+
+    /* Give some space on the sides of the floated elements so text doesn't run right into it. */
+    .featurette-image.pull-left {
+      margin-right: 40px;
+    }
+    .featurette-image.pull-right {
+      margin-left: 40px;
+    }
+
+    /* Thin out the marketing headings */
+    .featurette-heading {
+      font-size: 50px;
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+
+
+    /* RESPONSIVE CSS
+    -------------------------------------------------- */
+
+    @media (max-width: 979px) {
+
+      .container.navbar-wrapper {
+        margin-bottom: 0;
+        width: auto;
+      }
+      .navbar-inner {
+        border-radius: 0;
+        margin: -20px 0;
+      }
+
+      .carousel .item {
+        height: 500px;
+      }
+      .carousel img {
+        width: auto;
+        height: 500px;
+      }
+
+      .featurette {
+        height: auto;
+        padding: 0;
+      }
+      .featurette-image.pull-left,
+      .featurette-image.pull-right {
+        display: block;
+        float: none;
+        max-width: 40%;
+        margin: 0 auto 20px;
+      }
+    }
+
+
+    @media (max-width: 767px) {
+
+      .navbar-inner {
+        margin: -20px;
+      }
+
+      .carousel {
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+      .carousel .container {
+
+      }
+      .carousel .item {
+        height: 300px;
+      }
+      .carousel img {
+        height: 300px;
+      }
+      .carousel-caption {
+        width: 65%;
+        padding: 0 70px;
+        margin-top: 100px;
+      }
+      .carousel-caption h1 {
+        font-size: 30px;
+      }
+      .carousel-caption .lead,
+      .carousel-caption .btn {
+        font-size: 18px;
+      }
+
+      .marketing .span4 + .span4 {
+        margin-top: 40px;
+      }
+
+      .featurette-heading {
+        font-size: 30px;
+      }
+      .featurette .lead {
+        font-size: 18px;
+        line-height: 1.5;
+      }
+
+    }
+   </style>
+ </head>
+   
+ <body>
+     <div class="navbar-wrapper">
+	   <div class="container">
+	      <div class="navbar navbar-inverse">
+		     <div class="navbar-inner">
+			   <a id="top" class="brand" href="#">音乐实验室</a>
+			   <div class="nav-collapse collapse">
+			      <ul class="nav">
+				     <li class="active"><a href="#intros">实验流程</a></li>
+					 <li><a href="#aboutus">关于我们</a></li>
+					 <li><a href="#contact">联系我们</a></li>
+					 <li class="dropdown">
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown">更多<b class="caret"></b></a>
+						<ul class="dropdown-menu">
+						   <li><a href="https://www.bnu.edu.cn/">北京师范大学</a></li>
+						   <li><a href="http://psych.bnu.edu.cn/">北师大心理学部</a></li>
+						   <li class="divider"></li>
+						   <li class="nav-header">快速进入实验</li>
+						   <li><a href="https://bnupsych.asia.qualtrics.com/jfe/form/SV_2obZ9I3IoIxYc7P">问卷填写</a></li>
+						   <li><a href="https://research.millisecond.com/weicong1203/mmm.web">正式实验</a></li>
+						</ul>
+					</li>
+				   </ul>
+				   <form class="navbar-form pull-right">
+				   <input class="span2" type="text" placeholder="search">
+				   <button type="submit" class="btn">搜索</button>
+				   </form>
+			   </div>
+			 </div>
+		  </div>
+	   </div>
+	 </div>
+	 
+		
+<div id="myCarousel" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="img/01.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>你曾为一支旋律掩面伤神吗？</h1>
+              <p class="lead">不论你是否曾像某歌手节目优秀的观众一样为一首歌专注哭泣，你一定有过一个时刻，一首旋律就那么打动了你。2019年，音乐实验室全新打造一款音乐实验，期待对音乐有（无）共鸣的你来参与！下方按钮等你来戳！</p>
+              <a class="btn btn-large btn-primary" href="#intros">戳进来看看</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/02.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>你曾为一支旋律陶醉忘我吗？</h1>
+              <p class="lead">不论你是否曾像某歌手节目优秀的观众一样为一首歌闭目聆听，你一定有过一个时刻，一首旋律就那么打动了你。2019年，音乐实验室全新打造一款音乐实验，期待对音乐有（无）共鸣的你来参与！下方按钮等你来戳！</p>
+              <a class="btn btn-large btn-primary" href="#intros">戳进来看看</a>
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="img/03.jpg" alt="">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>你曾为一支旋律欣喜若狂吗？</h1>
+              <p class="lead">不论你是否曾像某歌手节目优秀的观众一样为一首歌起立鼓掌，你一定有过一个时刻，一首旋律就那么打动了你。2019年，音乐实验室全新打造一款音乐实验，期待对音乐有（无）共鸣的你来参与！下方按钮等你来戳！</p>
+              <a class="btn btn-large btn-primary" href="#intros">再戳进来看看</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+    </div> 
+	
+<div style="background-color:#FFE4E1;height:200px;">	
+<h2 id="intros" class="text-center">实验流程</h2>
+   <div class="roll">
+       <div class="span3 offset1">
+	        <img src="img/item_icon1.png">
+		</div>
+	   <div class="span3">
+	        <img src="img/item_icon2.png">
+		</div>
+		<div class="span3">
+		    <img src="img/item_icon3.png">
+		</div>
+		<div class="span3">
+		    <img src="img/item_icon4.png">
+		</div>
+	</div>
+</div>
+<div class="row" style="background-color:#FFE4E1;height:420px;">
+        <div class="span3 offset1">
+          <h3 >实验介绍</h3>
+          <p>（被试不可见）以往研究表明，不同风格的旋律对人们的情感启动作用不同。本研究想在此基础之上探究人格和音乐风格对情感启动是否具有交互作用，有怎样的交互作用。本实验分为三部分：知情同意、大五人格量表填写、正式实验。正式实验流程将先给被试放一段1分钟的音乐，之后让其做一些数学题，然后通过情绪量表对其情绪进行测量。每个被试做24组这样的试次。</p>
+		  <p>大五人格量表和情绪量表均为计分。剔除数学题正确率60%以下的被试。用方差分析、简单效应分析进一步分析人格和音乐风格是否存在显著的交互作用。预期结果：人格与音乐风格交互作用显著。相较于其他气质类型的被试，抑郁气质的被试更亦被悲伤的音乐启动悲伤的情绪，被快乐的音乐启动快乐的情绪。</p>
+        </div>
+        <div class="span3">
+          <h3>知情同意</h3>
+          <p>在实验开始之前，请戳下方按钮阅读并签署知情同意书。<hr/></p>
+          <p><a class="btn" href="#">知情同意书 &raquo;</a></p>
+		  <p><img src="img/zqty.jpg" style="height:225px"></p>
+       </div>
+        <div class="span3">
+          <h3>问卷填写</h3>
+          <p>这是本实验的第一部分。请扫下面的二维码或戳按钮进入问卷的填写。大概10分钟~<hr/><a class="btn" href="https://bnupsych.asia.qualtrics.com/jfe/form/SV_2obZ9I3IoIxYc7P">戳我进问卷</a></p>
+          <img src="img/erweima.jpg" style="height:225px;width:225px">
+        </div>
+		<div class="span3">
+		  <h3>正式实验</h3>
+		  <p>这是本实验的第二部分,也是最后一部分。请戳下面的按钮进入正式实验环节。具体操作和要求稍后为您呈现。<hr/></p>
+		  <p><a class="btn" href="https://research.millisecond.com/weicong1203/mmm.web">正式实验 &raquo;</a></p>
+		  <hr/>
+		  <p><img src="img/erji.jpg"></p>
+		 </div>
+      </div>
+ 
+	  
+<hr class="featurette-divider">
+
+<h2 id="aboutus" style="text-center">关于我们</h2>
+<div class="featurette">
+   <img class="featurette-image pull-right" src="img/wwr.jpg">
+   <h2 class="featurette-heading">王小萝<span class="musted">——问卷编制</span></h2>
+   <p class="lead">不会编问卷的心理学生不是好萝北，大家好我是Qualtrics小编——王婉睿。</p>
+</div>
+
+<div class="featurette">
+   <img class="featurette-image pull-left" src="img/hys.jpg">
+   <h2 class="featurette-heading">丝儿<span class="musted">——网页编辑</span></h2>
+   <p class="lead">当初一句“网页编辑好有趣啊”就把这个天真的小女孩拉入坑。虽然这个“自学”的过程漫长曲折，但您的好评将给她莫大的自信！请记住她可爱的名字——郝雨丝！</p>
+</div>
+
+<div class="featurette">
+   <img class="featurette-image pull-right" src="img/wym.jpg">
+   <h2 class="featurette-heading">王小明<span class="musted">——inquisit程序媛</span></h2>
+   <p class="lead">大家好，我是王小明（学名：王伊明）。一个刚剪了短发放飞自我的inquisit程序媛。我没有萝北的严肃活泼，也没有丝儿的审美创意，但我有一颗跟inquisit死磕到底的心！</p>
+   <p class="lead">但是，音乐还是被压缩成了小蜜蜂音质，这大概是真让人心痛的一件事了吧，哭唧唧。</p>
+</div>
+
+
+ <footer>
+ <div style="background-color:#AFEEEE;height:150px">
+ <h3 id="contact">联系我们</h3>
+ <p>tel:6666666</p>
+ <p>email:musiclab@163.com</p>
+ </div>
+ </footer>
+
+
+
+ 
+    <script src="http://code.jquery.com/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="../assets/js/bootstrap-alert.js"></script>
+    <script src="../assets/js/bootstrap-modal.js"></script>
+    <script src="../assets/js/bootstrap-dropdown.js"></script>
+    <script src="../assets/js/bootstrap-scrollspy.js"></script>
+    <script src="../assets/js/bootstrap-tab.js"></script>
+    <script src="../assets/js/bootstrap-tooltip.js"></script>
+    <script src="../assets/js/bootstrap-popover.js"></script>
+    <script src="../assets/js/bootstrap-button.js"></script>
+    <script src="../assets/js/bootstrap-collapse.js"></script>
+    <script src="../assets/js/bootstrap-carousel.js"></script>
+    <script src="../assets/js/bootstrap-typeahead.js"></script>
+ </body>
